@@ -1,0 +1,11 @@
+Create an EC2 instance which will be used for Jenkins master
+Master Instance type: t3.medium, Amazon Linux
+Node Instance type: t3.small
+Task details:
+Using Terraform, create the ec2 instances for Jenkins maser and 1 Jenkins node.
+Create ansible Role to setup Jenkins Master.
+Create ansible Role to configure Jenkins node (install perquisites)
+Configure regular AMI snapshots (once a day)
+Once GitLab is up and running:
+Create git repo for your terraform code, commit your code.
+Create git repo for ansible code, commit your code
