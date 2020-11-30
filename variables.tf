@@ -28,5 +28,8 @@ variable "security_group_name" {
 variable "security_group_name_slave" {
   default = "ec2-security-group-slave"
 }
+variable "lambda_function_name" {
+  default = "create_ami_python3"
+}
 
 

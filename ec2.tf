@@ -85,6 +85,7 @@ resource "aws_instance" "ec2_master" {
     "Owner" = "Veronica Hajdeu"
     "Discipline" = "DevOps"
     "Purpose" = "Internship"
+    "Backup" = "True"
   }
 }
 
@@ -99,6 +100,7 @@ resource "aws_instance" "ec2_slave" {
     "Owner" = "Veronica Hajdeu"
     "Discipline" = "DevOps"
     "Purpose" = "Internship"
+    "Backup" = "True"
   }
 }
 
