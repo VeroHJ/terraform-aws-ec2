@@ -75,32 +75,36 @@ resource "aws_security_group" "ec2_security_group_slave" {
 }
 
 resource "aws_instance" "ec2_master" {
-  subnet_id = aws_subnet.ec2_subnet.id
+  subnet_id = data.aws_subnet.ec2_subnet.id
   ami = var.ami
   instance_type = var.instance_type_master
   key_name = aws_key_pair.ec2_ssh_key.key_name
   vpc_security_group_ids = [aws_security_group.ec2_security_group.id]
+  private_ip = "172.31.6.120"
+  associate_public_ip_address = true
   tags = {
-    "Name" = "ec2_master"
+    "Name" = "ec2_master_jenkins"
     "Owner" = "Veronica Hajdeu"
     "Discipline" = "DevOps"
     "Purpose" = "Internship"
-    "Backup" = "True"
+    "Backup_jenkins" = "True"
   }
 }
 
 resource "aws_instance" "ec2_slave" {
-  subnet_id = aws_subnet.ec2_subnet.id
+  subnet_id = data.aws_subnet.ec2_subnet.id
   ami = var.ami
   instance_type = var.instance_type_slave
   key_name = aws_key_pair.ec2_ssh_key.key_name
   vpc_security_group_ids = [aws_security_group.ec2_security_group_slave.id]
+  private_ip = "172.31.6.121"
+  associate_public_ip_address = true
   tags = {
-    "Name" = "ec2_slave"
+    "Name" = "ec2_slave_jenkins"
     "Owner" = "Veronica Hajdeu"
     "Discipline" = "DevOps"
     "Purpose" = "Internship"
-    "Backup" = "True"
+    "Backup_jenkins" = "True"
   }
 }
 
